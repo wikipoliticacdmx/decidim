@@ -1,0 +1,19 @@
+server {
+    listen 80;
+    listen [::]:80 ipv6only=on;
+
+    server_name xxx.xxx.xx.xxx;
+    client_max_body_size 32M;
+
+    passenger_enabled on;
+    passenger_ruby /home/ubuntu/.rbenv/shims/ruby;
+    passenger_env_var DATABASE_URL xxx;
+    passenger_env_var SECRET_KEY_BASE xxx;
+    passenger_env_var SMTP_USERNAME xxx;
+    passenger_env_var SMTP_PASSWORD xxx;
+    passenger_env_var SMTP_ADDRESS xxx;
+    passenger_env_var SMTP_DOMAIN xxx;
+
+    rails_env    production;
+    root         /home/ubuntu/decidim/app/public;
+}
